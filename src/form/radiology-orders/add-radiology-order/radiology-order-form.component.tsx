@@ -124,13 +124,6 @@ export function RadiologyOrderForm({
     },
   });
 
-  const orderReasonUuids =
-    (
-      config.labTestsWithOrderReasons?.find(
-        (c) => c.labTestUuid === defaultValues?.testType?.conceptUuid
-      ) || {}
-    ).orderReasons || [];
-
   const handleFormSubmission = useCallback(
     (data: RadiologyOrderBasketItem) => {
       data.action = "NEW";
